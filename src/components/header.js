@@ -17,19 +17,29 @@ function Header() {
         .fromTo(
           "nav ul li",
           { x: 0, opacity: 1 },
-          { x: 20, opacity: 0, duration: 1 }
+          { x: 20, opacity: 0, duration: 0.3 }
         )
-        .set("nav ul", { display: "none", opacity: 0, duration: 1 });
+        .fromTo(
+          "nav ul",
+          { y: 0, opacity: 1 },
+          { y: 20, opacity: 0, duration: 0.2 }
+        )
+        .set("nav ul", { display: "none" });
     } else if (toggleMenu === false) {
       setToggleMenu(true);
       hamburgerMenu.classList.add("hamburger-menu-close");
       const navTl = gsap
         .timeline()
-        .set("nav ul", { display: "flex", opacity: 1, duration: 1 })
+        .set("nav ul", { display: "flex" })
+        .fromTo(
+          "nav ul",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.2 }
+        )
         .fromTo(
           "nav ul li",
           { x: 20, opacity: 0 },
-          { x: 0, opacity: 1, duration: 1 }
+          { x: 0, opacity: 1, duration: 0.3 }
         );
     }
   }
