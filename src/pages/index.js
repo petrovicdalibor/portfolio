@@ -18,7 +18,7 @@ const IndexPage = () => {
 
     gsap.to("body", 0, { css: { visibility: "visible" } });
 
-    tl.from(".line span", 1.8, {
+    tl.from(".line span", 1.3, {
       y: 100,
       ease: "power4.out",
       delay: 0.5,
@@ -26,18 +26,19 @@ const IndexPage = () => {
       stagger: {
         amount: 0.3,
       },
-    })
-      .to(".overlay", 1, {
-        opacity: 0,
-        delay: 0.4,
-      })
-      .to(".colorful", 0.5, { css: { color: "rgb(56, 255, 198)" } })
-      .to(".overlay", 0, { css: { display: "none" } });
+    }).from(".btn-row span", 0.7, {
+      y: 50,
+      ease: "power4.out",
+    });
+    // .to(".overlay", 1, {
+    //   opacity: 0,
+    //   delay: 0.4,
+    // })
   }, []);
   return (
     <>
       <div className="overlay"></div>
-      <Header />
+      <Header isHome={true} />
       <Banner />
     </>
   );

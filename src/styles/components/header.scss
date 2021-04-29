@@ -26,9 +26,10 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      display: none;
+      display: flex;
       overflow: hidden;
       @include media("<=tablet") {
+        display: none;
         top: 0;
         left: 0;
         width: 100vw;
@@ -80,7 +81,7 @@
       }
     }
     .hamburger-menu {
-      display: block;
+      display: none;
       width: 25px;
       height: 16px;
       z-index: 10000;

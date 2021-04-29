@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import React from "react";
 import gsap from "gsap/gsap-core";
 
-function Header() {
+function Header({ isHome }) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   function menuToggle() {
@@ -48,7 +48,7 @@ function Header() {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <Link to="/">PETROVIC.</Link>
+            {isHome ? "" : <Link to="/">PETROVIC.</Link>}
           </div>
 
           <nav>

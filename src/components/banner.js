@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 function Banner() {
@@ -21,7 +22,10 @@ function Banner() {
             </div>
           </h2>
           <div className="btn-row">
-            <a href="#">Let me show you</a>
+            <span>
+              <Link to="/projects">Let me show you</Link>
+              {/* <Link href="/projects">Let me show you</Link> */}
+            </span>
           </div>
         </div>
       </div>
